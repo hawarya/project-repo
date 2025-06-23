@@ -1,103 +1,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-    display: grid;
-    height: 100%;
-    place-items: center;
-    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+body {
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+.text{
+    position: absolute;
+      top: 5;
+      left: 0;
+      width: 100%;
+  text-align: center;
+      padding: 10px;
+      font-size: 70px;
+      font-weight: bold;
+      z-index: 1000;
+}
+ .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+      gap: 100px;
+    }
 
 .wrapper {
-    height: 400px;
-    width: 320px;
-    perspective: 1000px;
+  height: 400px;
+  width: 300px;
+  perspective: 1000px;
+  
 }
 
-.wrapper .card {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    border-radius: 10px;
-    transform-style: preserve-3d;
-    transition: 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 .wrapper:hover .card {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-.front-face, .back-face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    background: #fff;
-    padding: 5px;
+.front-face,
+.back-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  background: #fff;
+  padding: 5px;
 }
 
 .front-face img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .back-face {
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .back-face img {
-     height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    padding: 5px;
-      object-fit: cover;
-      border: 3px solid #fff;
-    background: linear-gradient(375deg,#1cc7d0,#2ede98);
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  border: 3px solid #fff;
 }
 
 .back-face .info {
-    text-align: center;
+  text-align: center;
 }
 
 .back-face .info .title {
-    font-size: 30px;
-    font-weight: 500;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .back-face ul {
-    display: flex;
+  display: flex;
+  padding-bottom: 10px;
 }
 
 .back-face ul a {
-    display: block;
-    height: 40px;
-    width: 40px;
-    background: linear-gradient(375deg, #1cc7d0, #2ede98);
-    text-align: center;
-    border: 2px solid transparent;
-    line-height: 38px;
-    margin: 0 5px;
-    border-radius: 50%;
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
+  display: block;
+  height: 40px;
+  width: 40px;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  text-align: center;
+  border: 2px solid transparent;
+  line-height: 38px;
+  margin: 0 5px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
 }
 
 .back-face ul a:hover {
-    background: none;
-    color: #1cc7d0;
-    border-color: #1cc7d0;
+  background: none;
+  color: #1cc7d0;
+  border-color: #1cc7d0;
 }
